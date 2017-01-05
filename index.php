@@ -1,7 +1,15 @@
 <?php
-session_start();
-include("./functions/functionUsers.php");
-include("./functions/functionContent.php");
-include("./common/header.php");
-include("./common/main.php");
-include("./common/footer.php");
+
+require ('./class/Autoload.php');
+spl_autoload_register('Autoload::classAutoloader');
+
+// try {
+//    throw new Exception("Fausse alerte !");
+// } catch(Exception $e){
+//     //C'est ainsi qu'on appelle une classe en peuheushp
+//     Log::writeCSV($e);
+// }
+
+include('./contents/inscription.inc.php');
+
+?>
