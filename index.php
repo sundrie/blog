@@ -2,6 +2,7 @@
 
 require ('./class/Autoload.php');
 spl_autoload_register('Autoload::classAutoloader');
+session_start();
 
 // try {
 //    throw new Exception("Fausse alerte !");
@@ -11,5 +12,11 @@ spl_autoload_register('Autoload::classAutoloader');
 // }
 
 include('./contents/inscription.inc.php');
+include('./contents/connexion.inc.php');
+include('./contents/deconnexion.inc.php');
 
+// test session fonctionne
+if (isset($_SESSION['user'])) {
+    echo 'Bonjour ' . $_SESSION['user']['pseudo'];
+}
 ?>

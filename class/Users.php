@@ -41,14 +41,14 @@ class Users
     }
 
     public static function connexion(){
-      session_start();
-      if (isset($_POST['email']) && isset($_POST['password'])) {
-        $sql = "SELECT * FROM users WHERE mail='".$_POST['email']."' AND password='".$_POST['password']."'";
+      if (isset($_POST['pseudo']) && isset($_POST['password'])) {
+        $sql = "SELECT * FROM users WHERE pseudo='".$_POST['pseudo']."' AND password='".$_POST['password']."'";
+        $instance = new PDO("mysql:host=localhost;dbname=blog", "root", "");
         $user = $instance->query($sql)->fetch();
 
         if ($user) {
           $_SESSION['user'] = array(
-            "username" => $user['nom'],
+            "pseudo" => $user['pseudo'],
             "userId" => $user['id']
           );
         } else {

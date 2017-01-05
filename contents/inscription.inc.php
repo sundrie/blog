@@ -15,6 +15,8 @@ if (isset($_POST['send'])) {
 
 ?>
 
+<h2>Inscription</h2>
+
 <form method="post" action="index.php">
     <label for="pseudo">pseudo</label><input type="text" name="pseudo"><br>
     <label for="email">email</label><input type="email" name="email"><br>
