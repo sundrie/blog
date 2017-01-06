@@ -23,6 +23,7 @@ if (isset($_SESSION['user'])) {
 if (isset($_POST['generateArticle'])) {
   Articles::poster();
 }
+
 ?>
 
 <form action="index.php" method="post">
@@ -30,3 +31,10 @@ if (isset($_POST['generateArticle'])) {
 </form>
 
 <?php Articles::afficher(); ?>
+
+
+<?php
+if (isset($_POST['modifArticle'])){
+  Articles::modifier();
+}
+?>
