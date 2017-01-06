@@ -14,6 +14,8 @@ if (isset($_POST['deco'])) {
 }
 
 ?>
+<?php if (isset($_SESSION['user'])) { ?>
 <form method="post" action="index.php">
     <input type="submit" name="deco" value="Déconnexion">
 </form>
+<?php } ?>
